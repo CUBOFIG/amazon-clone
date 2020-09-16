@@ -14,16 +14,18 @@ const Cambio = () => {
     const valor = Numero - 1
     setNumero(valor)
   }
-
+  const actualizar = (event) => {
+    setNumero(parseInt(event.target.value))
+  }
   useEffect(() => {
     console.log(Numero)
   }, [Numero])
 
   return (
     <div>
-      <button onClick={alto}>subir</button>
+      <button onClick={bajo}>MENOS</button>
       <input type="text" onChange={alto} />
-      <button onClick={bajo} >bajar</button>
+      <button onClick={alto}>MÁS</button>
       <Mostar valor={Numero} />
     </div>
   )

@@ -1,7 +1,7 @@
 import React from 'react'
 import Logo from '../../img/IMG-1.png'
 import './Header.scss'
-import { Search, ShoppingBasket } from '@material-ui/icons'
+import { Search, ShoppingBasket, ArrowDropDown } from '@material-ui/icons'
 
 const Header = () => {
   return (
@@ -14,6 +14,10 @@ const Header = () => {
         />
 
         <div className="header-search">
+          <div className="header-search-depart">
+            <span>All</span>
+            <ArrowDropDown />
+          </div>
           <input
             className="header-search-input"
             type="text"
