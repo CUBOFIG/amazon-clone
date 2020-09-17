@@ -1,7 +1,24 @@
+import { useStateValue } from 'container/StateProvider/StateProvider'
 import React from 'react'
 import './Products.scss'
 
-const Products = ({ title, imagen, price, rating }) => {
+const Products = ({ id, title, image, price, rating }) => {
+
+  const [{ basket }, dispatch] = useStateValue();
+
+  const addToBasket = () => {
+    dispatch({
+      type: 'ADD_TO_BASKET',
+      item: {
+        id: id,
+        tittle: title,
+        image: image,
+        price: price,
+        rating: rating,
+      },
+    });
+  };
+
   return (
     <div className="products">
       <div className="product-settings d-flex w-100 align-items-center">
@@ -18,11 +35,11 @@ const Products = ({ title, imagen, price, rating }) => {
           </div>
         </div>
         <img
-          src={imagen}
+          src={image}
           alt="product"
           className="product-img"
         />
-        <button>Add to Basket</button>
+        <button onClick={addToBasket}>Add to Basket</button>
       </div>
     </div>
   )
