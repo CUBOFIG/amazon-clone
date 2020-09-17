@@ -1,0 +1,113 @@
+.header {
+
+  .header-settings {
+    height: 60px;
+    display: flex;
+    background-color:rgb(19, 25, 33);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    align-items: center;
+  }
+
+  .header-logo {
+    width: 100px;
+    object-fit: contain;
+    margin: 0 20px;
+    margin-top: 12px;
+  }
+
+  .header-search {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    border-radius: 24px;
+  }
+
+  .header-search-depart {
+    font-size: 12px;
+    color: rgb(102, 101, 101);
+    background-color: rgb(201, 201, 201);
+    height: 30px !important;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+  }
+
+  .header-search-input {
+    height: 30px;
+    padding: 10px;
+    border: none;
+    width: 100%;
+  }
+
+  .header-search-input {
+    outline: none;
+  }
+
+  .header-search-icon {
+    padding: 5px;
+    height: 30px !important;
+    background-color: #eba54b;
+
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+  }
+
+  .header-nav {
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  .header-option {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+    margin-right: 10px;
+    color: white;
+  }
+
+  .header-option-lineone {
+    font-size: 10px;
+    color: rgb(170, 170, 170);
+  }
+
+  .header-option-linetwo {
+    font-size: 13px;
+    font-weight: 800;
+  }
+
+  .header-basketcount {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .header-option-basket {
+    display: flex;
+    align-items: center;
+    color: white;
+  }
+
+  // .header-search:focus {
+  //   border: 2px solid #d69846;
+  //   outline: 5px #d69846;
+  //   outline-offset: 5px;
+
+  //   border-bottom-right-radius: 8px;
+  //   border-top-right-radius: 8px;
+  //   border-bottom-left-radius: 8px;
+  //   border-top-left-radius: 8px;
+  // }
+
+  // .header-search-input:focus {
+  //   outline: 4px dotted #e73;
+  // outline-offset: 4px;
+  // background: #ffa;
+  // }
+
+
+
+}

@@ -1,0 +1,21 @@
+.subtotal {
+  
+  flex-direction: column;
+  justify-content: space-between;
+
+  width: 300px;
+
+  background-color: #f3f3f3;
+  border: 1px solid #dddddd;
+  border-radius: 3px;
+}
+
+.button-procced {
+  background-color: #ffd814 !important;
+  color: rgb(63, 63, 63) !important;
+  border: none !important;
+}
+
+.button-procced:hover {
+  background-color: #e7c518 !important;
+}
