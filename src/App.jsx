@@ -2,15 +2,17 @@ import React from 'react';
 import './App.css';
 import Checkout from './view/public/Checkout/Checkout'
 import Home from './view/public/Home/Home';
+import Login from 'view/public/Login/Login'
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
 
 function App() {
   return (
     <Router>
-      <div className="app s">
+      <div className="app">
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/checkout" component={Checkout} />
+          <Route path="/login" component={Login} />
           <Route
             component={() => (
               <div className="container">

@@ -6,12 +6,14 @@ const Products = ({ id, title, image, price, rating }) => {
 
   const [{ basket }, dispatch] = useStateValue();
 
+  console.log(">>", basket)
+
   const addToBasket = () => {
     dispatch({
       type: 'ADD_TO_BASKET',
       item: {
         id: id,
-        tittle: title,
+        title: title,
         image: image,
         price: price,
         rating: rating,
@@ -28,7 +30,7 @@ const Products = ({ id, title, image, price, rating }) => {
             <small>$</small>
             <strong>{price}</strong>
           </p>
-          <div className="product-rating">
+          <div className="d-flex">
             {Array(rating).fill().map((_, i) => (
               <p key={i} className="product-star">⭐</p>
             ))}

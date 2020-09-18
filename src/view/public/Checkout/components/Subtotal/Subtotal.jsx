@@ -2,17 +2,22 @@ import React from 'react'
 import './Subtotal.scss'
 import CurrencyFormat from 'react-currency-format'
 import { Button } from "reactstrap"
-import { ShoppingBasket } from '@material-ui/icons'
+import { useStateValue } from 'container/StateProvider/StateProvider'
+import { getBasketTotal } from 'Firebase/Reducers/Inventory'
+
 
 const Subtotal = () => {
+
+  const [{ basket }, dispatch] = useStateValue()
+
   return (
     <div className="subtotal d-flex p-3 mr-2 ml-2">
 
       <CurrencyFormat renderText={(value) => (
         <>
           <p>
-            Subtotal (0 items):
-            <strong> 0</strong>
+            Subtotal ({basket?.length} items):
+            <strong>{` ${value}`}</strong>
           </p>
 
           <small className="subtotal-gift d-flex align-items-center">
@@ -21,7 +26,7 @@ const Subtotal = () => {
         </>
       )}
         decimalScale={2}
-        value={0}
+        value={getBasketTotal(basket)}
         displayType={"text"}
         thousandSeparator={true}
         perfix={"MX"}
