@@ -15,10 +15,16 @@ const Subtotal = () => {
 
       <CurrencyFormat renderText={(value) => (
         <>
-          <p>
-            Subtotal ({basket?.length} items):
-            <strong>{` ${value}`}</strong>
-          </p>
+          {
+            basket.length >= 1
+              ? (<p>
+                Subtotal ({basket?.length} items):
+                <strong>{` ${value}`}</strong>
+              </p>
+              ) : (
+                <p>No products selected</p>
+              )
+          }
 
           <small className="subtotal-gift d-flex align-items-center">
             <input className="mr-1" type="checkbox" /> This order contains a gift
