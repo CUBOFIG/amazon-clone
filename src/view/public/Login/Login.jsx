@@ -1,20 +1,40 @@
 import React, { useState } from 'react'
 import './Login.scss'
 import Logo from "img/IMG-4.png"
-import { Link } from "react-router-dom"
+import { Link, useHistory } from "react-router-dom"
 import { Button } from "reactstrap"
+import { auth } from 'Firebase/config'
+import userEvent from '@testing-library/user-event'
 
 const Login = () => {
-
+  const history = useHistory();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
   const signIn = (e) => {
     e.preventDefault()
+
+    auth
+      .signInWithEmailAndPassword(email, password)
+      .then((auth) => {
+        history.push('/')
+      })
+      .catch(error => alert(error.message))
+
   }
 
-  const register = (e) => {
+  const register = e => {
     e.preventDefault()
+
+    auth
+      .createUserWithEmailAndPassword(email, password)
+      .then((auth) => {
+        console.log(auth)
+        if (auth) {
+          history.push('/')
+        }
+      })
+      .catch(error => alert(error.message))
   }
 
   return (

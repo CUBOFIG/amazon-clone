@@ -4,10 +4,17 @@ import './Header.scss'
 import { Search, ShoppingBasket, ArrowDropDown } from '@material-ui/icons'
 import { Link } from 'react-router-dom'
 import { useStateValue } from 'container/StateProvider/StateProvider'
+import { auth } from 'Firebase/config'
 
 const Header = () => {
 
-  const [{ basket }, dispatch] = useStateValue();
+  const [{ basket, user }, dispatch] = useStateValue();
+
+  const handleAuthentication = () => {
+    if (user) {
+      auth.signOut();
+    }
+  }
 
   return (
     <div className="header">
@@ -33,10 +40,10 @@ const Header = () => {
         </div >
 
         <div className="header-nav">
-          <Link to="/login" className="text-decoration-none">
+          <Link onClick={handleAuthentication} to={!user && '/login'} className="text-decoration-none">
             <div className="header-option">
               <span className="header-option-lineone">Hello Guest</span>
-              <span className="header-option-linetwo">Sign In</span>
+              <span className="header-option-linetwo">{user ? 'Sign Out' : 'Sign In'}</span>
             </div>
           </Link>
           <div className="header-option">
