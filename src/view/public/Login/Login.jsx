@@ -1,26 +1,27 @@
 import React, { useState } from 'react'
 import './Login.scss'
-import Logo from "img/IMG-4.png"
-import { Link, useHistory } from "react-router-dom"
-import { Button } from "reactstrap"
-import { auth } from 'Firebase/config'
+// import Logo from "img/IMG-4.png"
+// import { Link, useHistory } from "react-router-dom"
+// import { Button } from "reactstrap"
+// import { auth } from 'Firebase/config'
+import LoginForm from './components/LoginForm'
 
 const Login = () => {
-  const history = useHistory();
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  // const history = useHistory();
+  // const [email, setEmail] = useState('');
+  // const [password, setPassword] = useState('');
 
-  const signIn = (e) => {
-    e.preventDefault()
+  // const signIn = (e) => {
+  //   e.preventDefault()
 
-    auth
-      .signInWithEmailAndPassword(email, password)
-      .then((auth) => {
-        history.push('/')
-      })
-      .catch(error => alert(error.message))
+  //   auth
+  //     .signInWithEmailAndPassword(email, password)
+  //     .then((auth) => {
+  //       history.push('/')
+  //     })
+  //     .catch(error => alert(error.message))
 
-  }
+  // }
 
   // const register = e => {
   //   e.preventDefault()
@@ -41,7 +42,7 @@ const Login = () => {
 
   return (
     <div className="d-flex flex-column align-items-center">
-      <Link to="/">
+      {/* <Link to="/">
         <img
           className="login_logo mt-3 mb-3 mr-auto ml-auto"
           src={Logo} alt="logo" />
@@ -62,7 +63,8 @@ const Login = () => {
         <Link to="/register" >
           <Button className="login-registerbutton mt-2 w-100">Create your CUBIZON Account</Button>
         </Link>
-      </div>
+      </div> */}
+      <LoginForm />
     </div>
   )
 }

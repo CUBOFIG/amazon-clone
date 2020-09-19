@@ -3,9 +3,8 @@ import { Formik, Form } from 'formik'
 import Logo from 'img/IMG-4.png'
 import './RegisterForm.scss'
 import FormField from 'shared/Formik/FormField/FormField'
-import { useHistory } from 'react-router-dom'
+import { useHistory, Link } from 'react-router-dom'
 import { initialValues, LoginValidation } from './RegisterSchema'
-import { Link } from "react-router-dom"
 import { auth } from 'Firebase/config'
 import { Col } from 'reactstrap'
 
@@ -44,11 +43,14 @@ const RegisterForm = () => {
           </div>
           <div className="card card-body h-100 justify-content-div">
             <p className="title-register pb-2">Create Account</p>
+            <FormField name="displayName" label="Your Name" />
             <FormField name="email" label="E-mail" />
             <FormField name="password" component="password" label="Password" />
             <FormField name="repassword" component="password" label="Re-enter password" />
-            <FormField name="displayName" label="Your Name" />
-            <button type="submit" className="mt-5 registerbutton btn btn-md btn-primary btn-block mt-3">Submit</button>
+            <small>By creating an account, you agree to Cubizon's Conditions of Use and Privacy Notice.</small>
+            <button type="submit" className="mt-5 registerbutton btn btn-md btn-primary btn-block mt-3">
+              Create your Cubizon account
+            </button>
           </div>
         </Form>
       </Col>
