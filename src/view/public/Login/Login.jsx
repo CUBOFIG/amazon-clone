@@ -4,7 +4,6 @@ import Logo from "img/IMG-4.png"
 import { Link, useHistory } from "react-router-dom"
 import { Button } from "reactstrap"
 import { auth } from 'Firebase/config'
-import userEvent from '@testing-library/user-event'
 
 const Login = () => {
   const history = useHistory();
@@ -23,19 +22,22 @@ const Login = () => {
 
   }
 
-  const register = e => {
-    e.preventDefault()
+  // const register = e => {
+  //   e.preventDefault()
 
-    auth
-      .createUserWithEmailAndPassword(email, password)
-      .then((auth) => {
-        console.log(auth)
-        if (auth) {
-          history.push('/')
-        }
-      })
-      .catch(error => alert(error.message))
-  }
+  //   auth
+  //     .createUserWithEmailAndPassword(email, password)
+  //     .then(function (auth) {
+  //       console.log(auth)
+  //       if (auth) {
+  //         history.push('/')
+  //       }
+  //       return auth.user.updateProfile({
+  //         displayName: "jose"
+  //       })
+  //     })
+  //     .catch(error => alert(error.message))
+  // }
 
   return (
     <div className="d-flex flex-column align-items-center">
@@ -57,7 +59,9 @@ const Login = () => {
         <p className="mt-3">By signing-in you agree to the CUBIZON Conditions of Use & Sale. Please see our Privacy
             Notice, our Cookies Notice and your Interest-Based Ads Notice</p>
 
-        <Button onClick={register} className="login-registerbutton mt-2">Create your CUBIZON Account</Button>
+        <Link to="/register" >
+          <Button className="login-registerbutton mt-2 w-100">Create your CUBIZON Account</Button>
+        </Link>
       </div>
     </div>
   )

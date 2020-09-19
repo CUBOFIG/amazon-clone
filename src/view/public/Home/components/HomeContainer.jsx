@@ -14,7 +14,7 @@ const Home = () => {
           {/* <Carousel /> */}
 
           <Row className="home-row">
-            <Col xs="12" sm="12" md="6" lg="6" className="p-1">
+            <Col xs="12" sm="12" md="3" lg="3" className="p-1">
               <Products
                 title="Fuente de poder"
                 image="https://m.media-amazon.com/images/I/51fj7mL6PKL._AC_SL260_.jpg"
@@ -24,7 +24,26 @@ const Home = () => {
               />
             </Col>
 
-            <Col xs="12" sm="12" md="6" lg="6" className="p-1">
+            <Col xs="12" sm="12" md="3" lg="3" className="p-1">
+              <Products
+                title="Razer Base Station Chroma"
+                image="https://images-na.ssl-images-amazon.com/images/I/31D5UvkUsuL._AC_SY200_.jpg"
+                price={1328}
+                rating={4}
+                id={2}
+              />
+            </Col>
+            <Col xs="12" sm="12" md="3" lg="3" className="p-1">
+              <Products
+                title="Fuente de poder"
+                image="https://m.media-amazon.com/images/I/51fj7mL6PKL._AC_SL260_.jpg"
+                price={2500}
+                rating={3}
+                id={1}
+              />
+            </Col>
+
+            <Col xs="12" sm="12" md="3" lg="3" className="p-1">
               <Products
                 title="Razer Base Station Chroma"
                 image="https://images-na.ssl-images-amazon.com/images/I/31D5UvkUsuL._AC_SY200_.jpg"
@@ -36,7 +55,7 @@ const Home = () => {
           </Row>
 
           <Row className="home-row">
-            <Col xs="12" sm="12" md="4" lg="4" className="p-1">
+            <Col xs="12" sm="12" md="4" lg="6" className="p-1">
               <Products
                 title="Funko Pop! Movies: IT - Stan"
                 image="https://images-na.ssl-images-amazon.com/images/I/41RRxaDvDFL._AC_.jpg"
@@ -45,7 +64,7 @@ const Home = () => {
                 id={3}
               />
             </Col>
-            <Col xs="12" sm="12" md="4" lg="4" className="p-1">
+            <Col xs="12" sm="12" md="4" lg="3" className="p-1">
               <Products
                 title="Corsair LL Series LL120 - Ventilador RGB LED"
                 image="https://images-na.ssl-images-amazon.com/images/I/718X7Mn8rtL._AC_UL270_SR244,270_.jpg"
@@ -54,7 +73,7 @@ const Home = () => {
                 id={4}
               />
             </Col>
-            <Col xs="12" sm="12" md="4" lg="4" className="p-1">
+            <Col xs="12" sm="12" md="4" lg="3" className="p-1">
               <Products
                 title="Corsair Iluminación LED para CPU RGB, Commander Pro"
                 image="https://images-na.ssl-images-amazon.com/images/I/61E5-kr1F-L._AC_UL270_SR270,270_.jpg"

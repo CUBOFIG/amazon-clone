@@ -8,7 +8,7 @@ import { useStateValue } from 'container/StateProvider/StateProvider'
 
 const Checkout = () => {
 
-  const [{ basket, user }, dispatch] = useStateValue();
+  const [{ basket, user }] = useStateValue();
 
   return (
     <Layout>
@@ -22,7 +22,7 @@ const Checkout = () => {
             {
               user
                 ? (
-                  <h4>Hello, {user?.email}</h4>
+                  <h4>Hello, {user?.displayName}</h4>
                 ) : (
                   <h4>Sign in to get more content.</h4>
                 )

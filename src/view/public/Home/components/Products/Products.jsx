@@ -4,7 +4,7 @@ import './Products.scss'
 
 const Products = ({ id, title, image, price, rating }) => {
 
-  const [{ basket }, dispatch] = useStateValue();
+  const [{ }, dispatch] = useStateValue();
 
   // console.log(">>", basket)
 
@@ -32,7 +32,7 @@ const Products = ({ id, title, image, price, rating }) => {
           </p>
           <div className="d-flex">
             {Array(rating).fill().map((_, i) => (
-              <p key={i} className="product-star">⭐</p>
+              <span key={i} className="product-star" role="img" aria-label="star">⭐</span>
             ))}
           </div>
         </div>

@@ -5,7 +5,7 @@ import { useStateValue } from 'container/StateProvider/StateProvider'
 
 const CheckoutProduct = ({ id, image, title, price, rating }) => {
 
-  const [{ basket }, dispatch] = useStateValue();
+  const [{ }, dispatch] = useStateValue();
 
   const removeFromBasket = () => {
     dispatch({
@@ -25,7 +25,7 @@ const CheckoutProduct = ({ id, image, title, price, rating }) => {
         </p>
         <div className="checkoutproduct-rating d-flex">
           {Array(rating).fill().map((_, i) => (
-            <p key={i} className="product-star">⭐</p>
+            <span key={i} className="product-star" role="img" aria-label="star" >⭐</span>
           ))}
         </div>
         <Button onClick={removeFromBasket} className="checkout-button mt-2">Remove from Basket</Button>

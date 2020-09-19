@@ -8,7 +8,7 @@ import { getBasketTotal } from 'Firebase/Reducers/Inventory'
 
 const Subtotal = () => {
 
-  const [{ basket }, dispatch] = useStateValue()
+  const [{ basket }] = useStateValue()
 
   return (
     <div className="subtotal d-flex p-3 mr-2 ml-2">
