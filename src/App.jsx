@@ -10,7 +10,7 @@ function App() {
 
   useEffect(() => {
     auth.onAuthStateChanged(authUser => {
-      console.log("aqui>>>>>", authUser);
+      // console.log("aqui>>>>>", authUser);
 
       if (authUser) {
         dispatch({

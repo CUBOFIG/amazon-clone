@@ -16,7 +16,7 @@ const RegisterForm = () => {
       auth
         .createUserWithEmailAndPassword(value.email, value.password)
         .then(function (auth) {
-          console.log(auth)
+          // console.log(auth)
           if (auth) {
             history.push('/')
           }
