@@ -30,7 +30,7 @@ const NewHeader = () => {
 
   return (
     <div>
-      <Navbar className="color px-1 py-0" light expand="sm">
+      <Navbar className="color px-1 py-0" light expand="md">
         <NavbarToggler onClick={toggle} className="pr-2 pl-2 togle" />
         <NavbarBrand className="ml-4">
           <Link to="/">
@@ -55,12 +55,21 @@ const NewHeader = () => {
           </div >
 
           <Nav className="ml-auto w-auto" navbar>
-            <Link onClick={handleAuthentication} to={!user && '/login'} className="text-decoration-none">
-              <NavItem className="header-option">
-                <span className="header-option-lineone">Hello {user ? user?.displayName : "Guest"}</span>
-                <span className="header-option-linetwo">{user ? 'Sign Out' : 'Sign In'}</span>
-              </NavItem>
-            </Link>
+            {user ? (
+              <Link to={'/myaccount'} className="text-decoration-none">
+                <NavItem className="header-option">
+                  <span className="header-option-lineone">Hello {user ? user?.displayName : "Guest"}</span>
+                  <span className="header-option-linetwo">{user ? 'Account &  List' : 'Sign In'}</span>
+                </NavItem>
+              </Link>
+            ) : (
+                <Link to={!user && '/login'} className="text-decoration-none">
+                  <NavItem className="header-option">
+                    <span className="header-option-lineone">Hello Guest</span>
+                    <span className="header-option-linetwo">Sign In</span>
+                  </NavItem>
+                </Link>
+              )}
 
             <NavItem className="header-option">
               <span className="header-option-lineone">Returns</span>

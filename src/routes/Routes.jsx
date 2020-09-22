@@ -3,6 +3,7 @@ import Checkout from 'view/public/Checkout/Checkout'
 import Home from 'view/public/Home/Home';
 import Login from 'view/public/Login/Login'
 import Register from 'view/public/Register/Register'
+import MyAccount from 'view/private/MyAccount/MyAccount'
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
 
 const Routes = () => {
@@ -11,6 +12,7 @@ const Routes = () => {
       <Switch>
         <Route path="/" exact component={Home} />
         <Route path="/checkout" component={Checkout} />
+        <Route path="/myaccount" component={MyAccount} />
         <Route path="/login" component={Login} />
         <Route path="/register" component={Register} />
         <Route
