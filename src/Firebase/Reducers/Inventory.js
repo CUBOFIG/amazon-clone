@@ -1,6 +1,16 @@
 export const initialState = {
   basket: [],
   user: null,
+  category: [{
+    name: "Electronics",
+    img: require("img/IMG-11.jpg")
+  }, {
+    name: "Get fit at home",
+    img: require("img/IMG-10.jpg")
+  }, {
+    name: "CubizonBasics",
+    img: require("img/IMG-9.jpg")
+  }]
 };
 
 export const getBasketTotal = (basket) =>

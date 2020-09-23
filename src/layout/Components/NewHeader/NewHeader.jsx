@@ -3,28 +3,32 @@ import Logo from 'img/IMG-1.png'
 import './NewHeader.scss'
 import { Search, ShoppingBasket, ArrowDropDown } from '@material-ui/icons'
 import { Link } from 'react-router-dom'
+import DropDown from '../DropDown/DropDown'
 import { useStateValue } from 'container/StateProvider/StateProvider'
 import { auth } from 'Firebase/config'
 
-import {
-  Collapse,
-  Navbar,
-  NavbarToggler,
-  NavbarBrand,
-  Nav,
-  NavItem
-} from 'reactstrap';
+import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem } from 'reactstrap';
+
 
 const NewHeader = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [drop, setDrop] = useState(false);
+
   const toggle = () => setIsOpen(!isOpen);
 
   const [{ basket, user }] = useStateValue();
 
-
   const handleAuthentication = () => {
     if (user) {
       auth.signOut();
+    }
+  }
+
+  const cactivate = () => {
+    if (user) {
+      setDrop(!drop)
+    } else {
+      console.log("no se hace nada")
     }
   }
 
@@ -55,21 +59,14 @@ const NewHeader = () => {
           </div >
 
           <Nav className="ml-auto w-auto" navbar>
-            {user ? (
-              <Link to={'/myaccount'} className="text-decoration-none">
-                <NavItem className="header-option">
-                  <span className="header-option-lineone">Hello {user ? user?.displayName : "Guest"}</span>
-                  <span className="header-option-linetwo">{user ? 'Account &  List' : 'Sign In'}</span>
-                </NavItem>
-              </Link>
-            ) : (
-                <Link to={!user && '/login'} className="text-decoration-none">
-                  <NavItem className="header-option">
-                    <span className="header-option-lineone">Hello Guest</span>
-                    <span className="header-option-linetwo">Sign In</span>
-                  </NavItem>
-                </Link>
-              )}
+            <Link to={!user && '/login'} className="text-decoration-none">
+              <NavItem className="header-option" onClick={cactivate}>
+                <span className="header-option-lineone">Hello {user ? user?.displayName : "Guest"}</span>
+                <span className="header-option-linetwo">{user ? 'Account &  List' : 'Sign In'}</span>
+                {/* {drop && <DropDown />} */}
+              </NavItem>
+
+            </Link>
 
             <NavItem className="header-option">
               <span className="header-option-lineone">Returns</span>
@@ -86,7 +83,10 @@ const NewHeader = () => {
             <ShoppingBasket />
             <span className="header-option-linetwo ml-2">{basket?.length}</span>
           </Link>
+
         </Collapse>
+
+
       </Navbar>
     </div>
   )
