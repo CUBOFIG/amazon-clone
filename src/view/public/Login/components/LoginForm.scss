@@ -1,0 +1,26 @@
+.login {
+
+  .login-logo {
+    object-fit: contain;
+    width: 150px;
+  }
+  
+  .login-button {
+    background-color: #f0c14b !important;
+    border-radius: 2px !important;
+    border: 1px solid !important;
+    color: rgb(48, 47, 47) !important;
+    border-color: #a88734 #9c7e31 #846a29 !important;
+  }
+  
+  .title-login {
+    font-size: 30px;
+  }
+
+  .login-registerbutton{
+    font-size: 12px !important;
+    border-radius: 2px !important;
+    border: 1px solid !important;
+    border-color: darkgray !important;
+  }
+}

@@ -1,11 +1,19 @@
-.registerbutton {
-  background-color: #f0c14b !important;
-  border-radius: 2px !important;
-  border: 1px solid !important;
-  color: rgb(48, 47, 47) !important;
-  border-color: #a88734 #9c7e31 #846a29 !important;
-}
+.register {
 
-.title-register {
-  font-size: 30px;
+  .register-logo {
+    object-fit: contain;
+    width: 150px;
+  }
+  
+  .registerbutton {
+    background-color: #f0c14b !important;
+    border-radius: 2px !important;
+    border: 1px solid !important;
+    color: rgb(48, 47, 47) !important;
+    border-color: #a88734 #9c7e31 #846a29 !important;
+  }
+  
+  .title-register {
+    font-size: 30px;
+  }
 }
