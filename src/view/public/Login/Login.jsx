@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import './Login.scss'
 // import Logo from "img/IMG-4.png"
 // import { Link, useHistory } from "react-router-dom"
 // import { Button } from "reactstrap"
