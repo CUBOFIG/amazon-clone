@@ -1,57 +1,35 @@
 import React from 'react'
 import Fondo from 'img/IMG-2.jpg'
+import P1 from 'img/IMG-2.jpg'
+import { useStateValue } from 'container/StateProvider/StateProvider'
 import Products from './Products/Products'
 import './HomeContainer.scss'
+import CategoryContainer from './CategoryContainer/CategoryContainer'
 import { Row, Col } from 'reactstrap'
+import ProductContainer from './ProductContainer/ProductContainer'
+
 
 const Home = () => {
+
+  const [{ category }] = useStateValue();
+
   return (
     <div className="home">
       <div className="home-settings ml-auto mr-auto">
         <div className="home-container">
           <img src={Fondo} alt="logo" className="home-background w-100" />
 
-          {/* <Carousel /> */}
-
           <Row className="home-row">
-            <Col xs="12" sm="12" md="3" lg="3" className="p-1">
-              <Products
-                title="Fuente de poder"
-                image="https://m.media-amazon.com/images/I/51fj7mL6PKL._AC_SL260_.jpg"
-                price={2500}
-                rating={3}
-                id={1}
-              />
+            <Col xs="12" sm="12" md="6" lg="3" className="p-1">
+              <CategoryContainer />
             </Col>
 
-            <Col xs="12" sm="12" md="3" lg="3" className="p-1">
-              <Products
-                title="Razer Base Station Chroma"
-                image="https://images-na.ssl-images-amazon.com/images/I/31D5UvkUsuL._AC_SY200_.jpg"
-                price={1328}
-                rating={4}
-                id={2}
-              />
-            </Col>
-            <Col xs="12" sm="12" md="3" lg="3" className="p-1">
-              <Products
-                title="Fuente de poder"
-                image="https://m.media-amazon.com/images/I/51fj7mL6PKL._AC_SL260_.jpg"
-                price={2500}
-                rating={3}
-                id={1}
-              />
-            </Col>
+            {category.map((data, i) => (
+              <Col xs="12" sm="12" md="6" lg="3" className="p-1" key={i}>
+                <ProductContainer data={data} />
+              </Col>
+            ))}
 
-            <Col xs="12" sm="12" md="3" lg="3" className="p-1">
-              <Products
-                title="Razer Base Station Chroma"
-                image="https://images-na.ssl-images-amazon.com/images/I/31D5UvkUsuL._AC_SY200_.jpg"
-                price={1328}
-                rating={4}
-                id={2}
-              />
-            </Col>
           </Row>
 
           <Row className="home-row">

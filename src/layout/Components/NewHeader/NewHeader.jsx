@@ -63,7 +63,22 @@ const NewHeader = () => {
               <NavItem className="header-option" onClick={cactivate}>
                 <span className="header-option-lineone">Hello {user ? user?.displayName : "Guest"}</span>
                 <span className="header-option-linetwo">{user ? 'Account &  List' : 'Sign In'}</span>
-                {/* {drop && <DropDown />} */}
+                {drop && (
+                  <div className="MUESTRA">
+                    <div className="d-flex p-0" >
+                      <div className="ORDER w-100 ">
+                        <Link className="changecolor m-0 p-0"><p  >My account</p></Link>
+                        <Link className="changecolor m-0 p-0"><p>My account</p></Link>
+                        <span onClick={handleAuthentication}>Sign off</span>
+                      </div>
+                      <div className="ORDER w-100 ">
+                        <Link className="changecolor m-0 p-0"><p  >My account</p></Link>
+                        <Link className="changecolor m-0 p-0"><p>My account</p></Link>
+                        <span onClick={handleAuthentication}>Sign off</span>
+                      </div>
+                    </div>
+                  </div>
+                )}
               </NavItem>
 
             </Link>

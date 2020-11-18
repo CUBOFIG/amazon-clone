@@ -1,5 +1,5 @@
 .home {
-
+  
   .home-background {
     z-index: -1;
     margin-bottom: -20%;
@@ -16,6 +16,10 @@
     display: flex;
     justify-content: center;
     max-width: 1500px;
+  }
+
+  .select-this{
+    cursor: pointer;
   }
 
 }

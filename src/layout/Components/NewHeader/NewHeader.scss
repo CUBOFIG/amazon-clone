@@ -77,8 +77,39 @@
   color: white !important;
 }
 
-.dd {
-  border: none !important;
-   outline: none !important;
-   text-decoration: none !important;
+:root {
+  --bg:  #f1f1f1;
+  --bg-accent: #484a4d;
+  --text-color: #dadce1;
+  --nav-size: 60px;
+  --border: 1px solid #474a4d;
+  --border-radius: 8px;
+  --speed: 500ms; 
+}
+
+
+.MUESTRA{
+  position: absolute;
+  top: 58px;
+  width: 350px;
+  transform: translateX(-45%);
+  background-color: var(--bg);
+  border: var(--border);
+  border-radius: 5px;
+  padding: 1rem;
+  overflow: hidden;
+  transition: height var(--speed) ease;
+  padding: 20px;
+
+  .ORDER{
+    color: rgb(68, 68, 68) !important;
+    margin: 20px;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .changecolor{color: rgb(68, 68, 68) !important;
+    margin: 20px;}
+ 
 }

@@ -1,0 +1,23 @@
+.productscategory {
+
+  .product-settings {
+    flex-direction: column;
+    max-height: 400px;
+    min-width: 100px;
+    background-color: white;
+    z-index: 1;
+    justify-content: flex-end;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    padding: 20px;
+  }
+  
+  .product-img {
+    width: 100%;
+    object-fit: contain;
+    margin-bottom: 15px;
+    margin-top: 5px;
+  }
+  
+ 
+}
